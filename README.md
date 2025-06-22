@@ -23,15 +23,15 @@ Uygulama, component tabanlı, sade bir mimariyle inşa edilmiştir. Her UI bile�
 
 | Sınıf               | Görev |
 |---------------------|-------|
-| `LogoView.swift`       | Uygulama logosu ve başlık görünümü:contentReference[oaicite:0]{index=0} |
-| `BillInputView.swift`  | Kullanıcıdan hesap tutarını alan alan:contentReference[oaicite:1]{index=1} |
-| `TipInputView.swift`   | Bahşiş oranı seçimi (örnek renkli placeholder):contentReference[oaicite:2]{index=2} |
-| `SplitInputView.swift` | Kişi sayısını arttırma/azaltma bileşeni:contentReference[oaicite:3]{index=3} |
-| `ResultView.swift`     | Kişi başı ödemeyi ve toplamları gösteren sonuç ekranı:contentReference[oaicite:4]{index=4} |
-| `AmountView.swift`     | ResultView içinde kullanılan özel, dikey label bileşeni:contentReference[oaicite:5]{index=5} |
-| `Result.swift`         | Total hesap, tip ve kişi başı tutarı taşıyan model:contentReference[oaicite:6]{index=6} |
-| `ScreenIdentifier.swift` | UI testlerde erişim için accessibility ID tanımları:contentReference[oaicite:7]{index=7} |
-| `Tip.swift`            | Tip oranı enum yapısı (10%, 15%, 20% veya custom):contentReference[oaicite:8]{index=8} |
+| `LogoView.swift`       | Uygulama logosu ve başlık görünümü |
+| `BillInputView.swift`  | Kullanıcıdan hesap tutarını alan alanı |
+| `TipInputView.swift`   | Bahşiş oranı seçimi (örnek renkli placeholder)|
+| `SplitInputView.swift` | Kişi sayısını arttırma/azaltma bileşeni |
+| `ResultView.swift`     | Kişi başı ödemeyi ve toplamları gösteren sonuç ekranı|
+| `AmountView.swift`     | ResultView içinde kullanılan özel, dikey label bileşeni |
+| `Result.swift`         | Total hesap, tip ve kişi başı tutarı taşıyan model|
+| `ScreenIdentifier.swift` | UI testlerde erişim için accessibility ID tanımları|
+| `Tip.swift`            | Tip oranı enum yapısı (10%, 15%, 20% veya custom) |
 
 ---
 
