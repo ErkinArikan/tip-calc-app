@@ -1,49 +1,63 @@
-# 💵 AmountView
+# 💸 Tip Calculator - iOS (UIKit + RxSwift)
 
-A lightweight and reusable `UIView` subclass to display a **label + currency amount** in a vertically stacked format, built using UIKit + SnapKit.
-
-Useful for **summary sections** like "Total Bill", "Total Tip", etc. in checkout, finance, or utility apps.
+Swift ve UIKit kullanılarak geliştirilen, tamamen **programatik arayüze** sahip bir bahşiş hesaplama uygulamasıdır. Kullanıcı dostu ve test edilebilir MVVM mimarisiyle yapılandırılmıştır.
 
 ---
 
-## 📸 Preview
+## 🚀 Kullanılan Teknolojiler
 
-| Left-aligned | Right-aligned |
-|--------------|----------------|
-| `Total bill` <br> `$56.80` | `Total tip` <br> `$8.20` |
-
----
-
-## 🚀 Features
-
-- Clean vertical layout using `UIStackView`
-- Uses `NSAttributedString` to style currency formatting (large number, small `$`)
-- Customizable alignment (`.left`, `.right`, `.center`)
-- Lightweight & modular — designed for embedding in summary UIs
-- Fully programmatic (no storyboards)
-- SnapKit-based constraints for conciseness
-- `accessibilityIdentifier` support for UI testing
+- **Swift (UIKit)** – native iOS uygulama geliştirme
+- **RxSwift / RxCocoa** – Reaktif programlama ve veri bağlama
+- **SnapKit** – Auto Layout için sade DSL
+- **XCTest** – Unit ve UI test altyapısı
+- **MVVM** – UI & iş mantığını ayıran modern mimari
+- **Programatik UI** – Storyboard kullanılmadan inşa edilen arayüzler
 
 ---
 
-## 🛠 Installation
+## 🧩 Mimarî Yapı: MVVM + Rx
 
-### Manually
-
-Just drag and drop `AmountView.swift` into your project.
-
-> ✅ Requires [SnapKit](https://github.com/SnapKit/SnapKit)  
-> You can install via Swift Package Manager or CocoaPods.
+- **View** (`UIView`, `UIViewController`) yalnızca kullanıcı arayüzünden sorumludur.
+- **ViewModel** kullanıcı girdilerini alır, iş kurallarını uygular ve sonuçları reactive olarak yayınlar.
+- **Model** (`Result`, `Tip`) hesaplama sonuçlarını taşır.
 
 ---
 
-## 🧪 Example Usage
+## 📦 Ana Bileşenler
 
-```swift
-let amountView = AmountView(
-    title: "Total Bill",
-    textAlignment: .left,
-    amountLabelIdentifier: "totalBillLabel"
-)
+| Sınıf            | Açıklama |
+|------------------|----------|
+| `LogoView`       | Uygulama başlığı ve görseli |
+| `BillInputView`  | Tutar girişi |
+| `TipInputView`   | Bahşiş yüzdesi seçim bileşeni |
+| `SplitInputView` | Kişi sayısı kontrolü |
+| `ResultView`     | Kişi başı toplam gösterimi |
+| `LoginViewModel` | Rx ile MVVM yapılandırması |
+| `ThemeFont`, `ThemeColor` | Tasarım teması kontrolü |
 
-amountView.configure(amount: 56.80)
+---
+
+## 🧪 Test Altyapısı
+
+### 🧬 1. Unit Testler (`tip_calculatorTests.swift`)
+- Proje temel fonksiyonları için `XCTestCase` tabanlı test yapısı hazırlanmıştır.
+- Test senaryoları için `setUpWithError()` ve `tearDownWithError()` desteklenir.
+- Performans testi için `measure { ... }` kullanıma hazırdır:contentReference[oaicite:3]{index=3}.
+
+### 📲 2. UI Testler (`tip_calculatorUITests.swift`)
+- Uygulama arayüzüne dair temel testler `XCUIApplication()` üzerinden yapılır.
+- Uygulama başlatıldıktan sonra butonlara tıklanma, text yazma gibi işlemler test edilebilir.
+- `testLaunchPerformance()` ile uygulamanın açılış süresi ölçülebilir:contentReference[oaicite:4]{index=4}.
+
+### 📷 3. Launch UI Screenshot Testi (`tip_calculatorUITestsLaunchTests.swift`)
+- Uygulama ilk açıldığında ekran görüntüsü alınır.
+- Otomatik testte ekranın yüklenip yüklenmediği görsel olarak doğrulanabilir:contentReference[oaicite:5]{index=5}.
+
+---
+
+## 🛠 Kurulum ve Çalıştırma
+
+1. Projeyi klonla:
+```bash
+git clone https://github.com/kullaniciadi/tip-calculator.git
+cd tip-calculator
