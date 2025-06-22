@@ -1,58 +1,45 @@
 # 💸 Tip Calculator - iOS (UIKit + SnapKit)
 
-Swift ve UIKit kullanılarak storyboard olmadan geliştirilen, tamamen **programatik kullanıcı arayüzüne** sahip bir **bahşiş hesaplama (tip calculator)** uygulamasıdır. Kullanıcı, hesap tutarını, kişi sayısını ve bahşiş oranını girerek kişi başı düşen ödemeyi hızlıca görebilir.
+A fully programmatic Tip Calculator app built using Swift and UIKit, without any storyboard usage.  
+Users can input the bill amount, select a tip percentage, and adjust the number of people to instantly see the amount each person owes.
 
 ---
 
-## 🚀 Kullanılan Teknolojiler
+## 🚀 Technologies Used
 
-- **Swift (UIKit)** – Native iOS UI geliştirme
-- **SnapKit** – Auto Layout işlemleri için sade, okunabilir DSL
-- **Programatik UI** – Storyboard kullanılmadan tamamen kodla kurulan arayüzler
-- **XCTest** – Unit ve UI testleri için Apple’ın resmi test çerçevesi
-
----
-
-## 🧩 Proje Yapısı
-
-Uygulama, component tabanlı, sade bir mimariyle inşa edilmiştir. Her UI bileşeni ayrı `UIView` sınıfı olarak tanımlanmış ve `SnapKit` ile layout edilmiştir.
+- **Swift (UIKit)** – Native UI development for iOS
+- **SnapKit** – DSL-based Auto Layout system for clean and readable constraints
+- **Programmatic UI** – Entire interface is built in code; no Storyboards involved
+- **XCTest** – Apple's official testing framework for unit and UI tests
 
 ---
 
-## 📦 Bileşenler
+## 🧪 Testing
 
-| Sınıf               | Görev |
-|---------------------|-------|
-| `LogoView.swift`       | Uygulama logosu ve başlık görünümü |
-| `BillInputView.swift`  | Kullanıcıdan hesap tutarını alan alanı |
-| `TipInputView.swift`   | Bahşiş oranı seçimi (örnek renkli placeholder)|
-| `SplitInputView.swift` | Kişi sayısını arttırma/azaltma bileşeni |
-| `ResultView.swift`     | Kişi başı ödemeyi ve toplamları gösteren sonuç ekranı|
-| `AmountView.swift`     | ResultView içinde kullanılan özel, dikey label bileşeni |
-| `Result.swift`         | Total hesap, tip ve kişi başı tutarı taşıyan model|
-| `ScreenIdentifier.swift` | UI testlerde erişim için accessibility ID tanımları|
-| `Tip.swift`            | Tip oranı enum yapısı (10%, 15%, 20% veya custom) |
+- ✅ **Unit Tests**: Core test skeleton built using `XCTestCase`
+- ✅ **UI Tests**: UI interaction tested through `XCUIApplication`
+- ✅ **Launch Screen Tests**: App launch screen is captured and verified with screenshot attachment
 
 ---
 
-## 🧪 Testler
+## 📦 Key Components
 
-### ✅ Unit Testler (`tip_calculatorTests`)
-- `XCTestCase` ile iskelet test yapısı hazırdır
-- Performans testi ve fonksiyon testleri için `testExample()` ve `measure {}` örnekleri yer almaktadır:contentReference[oaicite:9]{index=9}
-
-### ✅ UI Testler (`tip_calculatorUITests`)
-- `XCUIApplication()` ile uygulama başlatılır ve kullanıcı arayüzü test edilir
-- Uygulama açılış süresi gibi metrikler ölçülebilir:contentReference[oaicite:10]{index=10}
-
-### ✅ UI Launch Screenshot (`tip_calculatorUITestsLaunchTests`)
-- Uygulama başlatıldığında otomatik ekran görüntüsü alınır ve test kapsamında saklanır:contentReference[oaicite:11]{index=11}
+| Component         | Description |
+|-------------------|-------------|
+| `LogoView`        | App logo and title label |
+| `BillInputView`   | Input field for bill amount |
+| `TipInputView`    | Predefined or custom tip selection |
+| `SplitInputView`  | Allows incrementing/decrementing number of people |
+| `ResultView`      | Displays total per person and breakdown |
+| `AmountView`      | Reusable subview to show labeled monetary values |
+| `Result.swift`    | Data model containing total, tip, and per person amount |
 
 ---
 
-## ⚙️ Kurulum
+## ⚙️ Getting Started
 
-1. Projeyi klonla:
+Clone the project and open it in Xcode:
+
 ```bash
-git clone https://github.com/kullaniciadi/tip-calculator.git
+git clone https://github.com/yourusername/tip-calculator.git
 cd tip-calculator
